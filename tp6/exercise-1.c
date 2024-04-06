@@ -16,7 +16,6 @@ int main()
     srand(time(NULL));
     int arr[MAX];
     fillArray(arr, MAX, 10, 350);
-    incrementOfOdd(arr, MAX, 1);
     changeNumber(arr, MAX, 300);
     printArray(arr, MAX);
     printf("el promedio es: %.2f", averageOfOddIndex(arr, MAX));
@@ -71,6 +70,6 @@ void incrementOfOdd(int arr[], int n, int step)
     for (int i = 0; i < n; i++)
     {
         if(arr[i] % 2 != 0)
-            arr[i] = arr[i] + step;
+            arr[i] = arr[i];
     }
 }
