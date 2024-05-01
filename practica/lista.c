@@ -12,6 +12,7 @@ void crearListaVacia(Tnodo **start);
 int esListaVacia(Tnodo *start);
 void insertarNodo(Tnodo **start, Item dato);
 void mostrarLista(Tnodo *start);
+void borrarNodo(Tnodo **start);
 
 int main()
 {
@@ -23,7 +24,8 @@ int main()
     insertarNodo(&start, 25);
     insertarNodo(&start, 50);
     insertarNodo(&start, 80);
-
+    mostrarLista(start);
+    borrarNodo(&start);
     mostrarLista(start);
 
     return 0;
@@ -57,4 +59,13 @@ void mostrarLista(Tnodo *start)
         num++;
         aux = aux->Siguiente;
     }
+}
+
+void borrarNodo(Tnodo **start)
+{
+    if (esListaVacia(*start))
+        return;
+    Tnodo *aux = *start;
+    *start = (*start)->Siguiente;
+    free(aux);
 }
